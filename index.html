@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Saya - Sheva Ahmad Ibrahim</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Tombol untuk mengubah tema -->
+        <div class="theme-switch-wrapper">
+            <button id="theme-toggle" class="theme-btn">🌙 Dark Mode</button>
+        </div>
+
+        <header class="profile-header">
+            <img src="foto-diri.jpeg" alt="Foto diri" class="profile-img">
+            <h1>Sheva Ahmad Ibrahim</h1>
+            <p class="subtitle">IPB University | SSMI | Kecerdasan Buatan | Angkatan 62</p>
+        </header>
+
+        <section class="card">
+            <h2>Informasi Data Diri</h2>
+            <ul class="info-list">
+                <li><strong>Nama Lengkap:</strong> Sheva Ahmad Ibrahim</li>
+                <li><strong>NIM:</strong> M0405251011 </li>
+                <li><strong>Program Studi:</strong> Kecerdasan Buatan</li>
+                <li><strong>Angkatan:</strong> 62</li>
+                <li><strong>Kelompok:</strong> Voyager Pearl</li>
+                <li><strong>Tempat, Tanggal Lahir:</strong> Bogor, 06 Maret 2007 </li>
+                <li><strong>Nomor Whatsapp:</strong> 083808495860</li>
+                <li><strong>Alamat Asal & Domisili:</strong> Jalan Gurusuma Rt 03/01 Kel Cibinong, Kec Cibinong, Kab Bogor</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Hobi & Minat</h2>
+            <p>Pengembangan perangkat lunak, pemrograman (seperti C dan Python), eksplorasi algoritma, serta aktif berpartisipasi dalam organisasi mahasiswa.</p>
+        </section>
+
+        <section class="card">
+            <h2>Harapan Selama Menjadi Mahasiswa Kecerdasan Buatan</h2>
+            <p>Ingin mendalami ilmu Kecerdasan Buatan untuk memecahkan masalah nyata, membangun solusi teknologi yang inovatif, dan berkontribusi aktif dalam komunitas akademik di IPB.</p>
+        </section>
+
+        <footer>
+            <h2>Social Media Account</h2>
+            <div class="social-links">
+                <a href="mailto:shevaahmadibrahim6@gmail.com">Email</a>
+                <a href="https://github.com/[Username GitHub Kamu]" target="_blank">GitHub</a>
+                <a href="https://instagram.com/ahmdshevaibra" target="_blank">Instagram</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // Cek apakah sebelumnya user sudah memilih dark mode
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            themeToggleBtn.textContent = '☀️ Light Mode';
+        }
+        themeToggleBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            // Simpan pilihan dan ubah ikon/teks tombol
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                themeToggleBtn.textContent = '☀️ Light Mode';
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeToggleBtn.textContent = '🌙 Dark Mode';
+            }
+        });
+    </script>
+</body>
+</html>
